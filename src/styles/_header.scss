@@ -3,10 +3,11 @@
 
 .header-banner {
   background-color: var(--grey-base);
+  font-family: var(--roboto);
   color: var(--white-font-color);
   text-align: center;
-  padding: 8px;
-  font-size: 14px;
+  padding: 2px;
+  font-size: 12px;
 }
 
 .header-logo {
@@ -18,11 +19,6 @@
 
   @include tablet {
     padding: 20px;
-  }
-
-  @include desktop {
-    flex-direction: row;
-    padding: 24px;
   }
   
   img {

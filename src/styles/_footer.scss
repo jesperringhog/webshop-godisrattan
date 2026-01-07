@@ -2,50 +2,35 @@
 @use "/src/styles/variables" as *;
 
 h4 {
-    font-size: 14px;
+    font-size: 12px;
     text-decoration: underline;
 
     @include tablet {
-        font-size: 18px;
-    }
-
-    @include desktop {
-        font-size: 18px;
+        font-size: 14px;
     }
 }
 
 footer {
     font-family: 'Roboto', sans-serif;
     width: 100vw;
-    height: 7rem;
+    height: 6rem;
     background-color: var(--grey-base);
     color: var(--white-font-color);
-    position: fixed;
-    left: 0;
     bottom: 0;
 
     @include tablet {
-        height: 8.5rem;
-    }
-
-    @include desktop {
-        height: 8.5rem;
+        height: 6.5rem;
     }
 }
 
 .footercolumns {
     display: flex;
-    font-size: 1rem;
+    font-size: 10px;
     line-height: 0.3rem;
     justify-content: space-evenly;
-    font-size: 12px;
 
     @include tablet {
-        font-size: 14px;
-    }
-
-    @include desktop {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -55,10 +40,6 @@ footer {
     font-size: 9px;
 
     @include tablet {
-        font-size: 14px;
-    }
-
-    @include desktop {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
