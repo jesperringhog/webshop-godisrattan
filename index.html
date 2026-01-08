@@ -1,67 +1,61 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <title>Godisråttan</title>
 </head>
+
 <body>
-    <section id="header"></section>
-    <div class="header-banner">
-      <p>Fri frakt vid köp över 200kr. Annars 49kr för hemleverans.</p>
-    </div>
-    <div class="header-logo">
-      <img src="/src/assets/logo/godisrattan_logotyp.png" alt="Godisråttan">
-    </div>
-    </section>
-    
+  <section id="header"></section>
+  <div class="header-banner">
+    <p>Fri frakt vid köp över 200kr. Annars 49kr för hemleverans.</p>
+  </div>
+  <div class="header-logo">
+    <img src="/src/assets/logo/godisrattan_logotyp.png" alt="Godisråttan">
+  </div>
+  </section>
 
-    <nav id="navbar">
-      <div id="navbarContainer">
-        <button id="menuToggle" aria-label="Öppna meny">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <ul id="navLinks">
-          <li><a class="navLink" href="#">Lösgodis</a></li>
-          <li><a class="navLink" href="#">Tema-boxar</a></li>
-          <li><a class="navLink" href="#">Utländskt</a></li>
-          <li>
-            <input
-              class="searchInput"
-              type="text"
-              placeholder="Sök produkt..."
-            />
-          </li>
-          <li>
-            <a class="navIcon" href="#" aria-label="varukorg"
-              ><img
-                src="/src/assets/ikoner/shopping_cart.svg"
-                width="30px"
-                alt="Varukorg"
-            /></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
-    <section id="main">
-      <h2>Vårt senaste godis</h2>
+  <nav id="navbar">
+    <div id="navbarContainer">
+      <button id="menuToggle" aria-label="Öppna meny">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul id="navLinks">
+        <li><a class="navLink" href="/src/pages/product.html">Lösgodis</a></li>
+        <li><a class="navLink" href="#">Tema-boxar</a></li>
+        <li><a class="navLink" href="#">Utländskt</a></li>
+        <li>
+          <input class="searchInput" type="text" placeholder="Sök produkt..." />
+        </li>
+        <li>
+          <a class="navIcon" href="#" aria-label="varukorg"><img src="/src/assets/ikoner/shopping_cart.svg" width="30px"
+              alt="Varukorg" /></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="main">
+    <h2>Vårt senaste godis</h2>
     <div class="productDetailsContainer">
       <div>
-      <h4>Sura Karameller</h4>
-      <p>Producerade i Sverige</p>
-      <p class="priceBig">8,90:-/hg</p>
+        <h4>Sura Karameller</h4>
+        <p>Producerade i Sverige</p>
+        <p class="priceBig">8,90:-/hg</p>
       </div>
       <button class="buyBtnBig">
         Köp
       </button>
     </div>
-    </section>
+  </section>
 
-  
+
 
 
 
@@ -94,4 +88,5 @@
 
   <script type="module" src="/src/main.ts"></script>
 </body>
+
 </html>

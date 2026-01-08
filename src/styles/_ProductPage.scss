@@ -1,0 +1,220 @@
+@use "/src/styles/mixins" as *;
+@use "/src/styles/variables" as *;
+
+:root {
+    --primary-base: #ffe6c1;
+    --secondary-base: #ffc7b9;
+    --nav-base: #f7c68e;
+    --primary-button: #f78075;
+    --grey-base: #747068;
+    --secondary-button: #73973e;
+    --alternative-base: #d9d9d9;
+    --primary-font-color: #000000;
+    --secondary-font-color: #fbab14;
+    --alternative-font-color: #f15c36;
+    --white-font-color: #ffffff;
+    --roboto: "Roboto", sans-serif;
+    --pacifico: "Pacifico", cursive;
+    --modak: "Modak", system-ui;
+}
+
+h2 {
+    letter-spacing: 3px;
+}
+
+#main {
+    background-image: none;
+}
+
+#productPageTitle {
+    font-family: var(--modak);
+    font-size: 2.5rem;
+    color: var(--secondary-font-color);
+    text-align: center;
+    margin: 1rem 0;
+    -webkit-text-stroke: 0.1px #000000;
+    text-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.5);
+
+    @include desktop {
+        font-size: 3rem;
+    }
+}
+
+
+
+body {
+    background-image: none;
+    background-color: var(--secondary-base);
+}
+
+nav {
+    margin-bottom: 1rem;
+}
+
+#productPageContainer {
+    height: fit-content;
+    width: 100%;
+    border-radius: 16px;
+    background-color: var(--primary-base);
+}
+
+#categoryGrid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    font-family: var(--roboto);
+}
+
+
+#sott {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+#overlayTextSott {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#surt {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+#overlayTextSurt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#salt {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+#overlayTextSalt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#categoryImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#categoryImg2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#categoryImg3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@include tablet {
+    #sott {
+        width: 300px;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    #surt {
+        width: 300px;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    #salt {
+        width: 300px;
+        height: 100px;
+        border-radius: 10px;
+    }
+}
+
+@include desktop {
+    #sott {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+    }
+
+    #surt {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+    }
+
+    #salt {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+    }
+}
+
+#productCardGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.productCard {
+    background-color: var(--white-font-color);
+    width: 150px;
+    height: 200px;
+    border-radius: 10%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.productCardImageContainer {
+    width: 80px;
+    height: 100px;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#productCardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
