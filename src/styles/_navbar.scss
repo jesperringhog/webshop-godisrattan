@@ -4,7 +4,6 @@
 #navbar {
   background-color: var(--nav-base);
   position: sticky;
-  //Ny
   top: 0;
   z-index: 1000;
 }
@@ -72,7 +71,7 @@
     text-align: center;
 
     &:hover {
-      background-color: var(--alternative-font-color);
+      background-color: var(--primary-font-color);
       color: var(--white-font-color);
     }
   }

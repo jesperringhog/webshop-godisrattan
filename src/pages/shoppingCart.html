@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div id="colorScheme">
   <section id="header"></section>
   <div class="header-banner">
     <p>Fri frakt vid köp över 200kr. Annars 49kr för hemleverans.</p>
@@ -42,18 +43,49 @@
   </nav>
 
   <section class="shoppingCart">
+    <div id="cartContainer">
     <h2>Varukorg</h2>
-    <div id="cartItems"><img src="/src/assets/ikoner/cartTest.png" width="500px" alt="test-bild">
-        <img src="/src/assets/ikoner/cartTest.png" width="500px" alt="test-bild">
+
+    <div id="cartItems">
+      <div class="cartItem">
+
+      <img id="cartImg" src="/src/assets/produktbilder/surakarameller.jpg" alt="produktbild">
+
+      <div class="cartInfo">
+      <p class="productName">Surakarameller</p>
+      <p class="productInfo">Blandade sura små godingar!</p>
+      </div>
+
+      <div class="cartQty">
+      <span class="Qty">Antal </span>
+
+      <div class="qtyControls">
+        <button id="minusBtn">-</button>
+        <span id="numOfProducts">1</span>
+        <button id="plusBtn">+</button>
+      </div>
+      </div>
+      
+      <div class="cartItemPriceContainer">
+        <span class="priceHead">Pris</span>
+        <span class="cartItemPrice">25kr</span>
+      </div>
+
+      <button id="removeBtn">x</button>
     </div>
-    <div id="cartTotal">
-        <div id="sumText">Total summa:</div>
-        <div id="totalSum">349kr</div>
+
+
+    
+    </div>
+    
+    <div class="cartPrice">
+        <span id="sum">Total summa:</span>
+        <span id="cartSum">25kr</span>
     </div>
 
     <button id="buyBtn">Gå till kassan</button>
 
-  
+  </div>
   </section>
 
 
@@ -88,6 +120,7 @@
   </section>
 
   <script type="module" src="/src/main.ts"></script>
+  </div>
 </body>
 
 </html>
