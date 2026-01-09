@@ -1,11 +1,9 @@
-import type { Product } from "../models/Product";
-import { createHtmlShoppingCart } from "./createHtmlShoppingCart";
+import { Product } from "../models/Product";
+import { createHtmlCartItems } from "./createHtmlCartItems";
 
-const shoppingCart: Product[] = [];
-
-export const addToCart = (products: Product[]) => {
-    products.forEach((product: Product, i) => {
-        shoppingCart.push(products[i]);
-        createHtmlShoppingCart(product);
-    });
+export const mainAddToCart = (products: Product[], shoppingCart: Product[]) => {
+  shoppingCart.push(products[0]);
+  createHtmlCartItems(shoppingCart);
 };
+
+// export const addToCart = (products: Product[]) => {};
