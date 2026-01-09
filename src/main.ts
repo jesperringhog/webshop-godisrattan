@@ -1,6 +1,7 @@
 import { products } from "./data/products";
 import "./styles/style.scss";
 import { mobileMenu } from "./utils/mobileMenu";
+import { showMoreHandleClick } from "./utils/showmoreBtn";
 import "./utils/checkoutBtn";
 import { mainProductContainer } from "./utils/mainProductContainer";
 import { mainAddToCart } from "./utils/addToCart";
@@ -16,3 +17,7 @@ document.getElementById("buyBtnBig")?.addEventListener("click", () => {
     mainAddToCart(products, shoppingCart);
 });
 
+import "./utils/showmoreBtn";
+
+mobileMenu();
+showMoreHandleClick();
