@@ -6,6 +6,7 @@ import "./utils/checkoutBtn";
 import { createHtmlMainProductCard } from "./utils/createHtmlMainProductCard";
 import { mainAddToCart } from "./utils/addToCart";
 import type { Product } from "./models/Product";
+import { checkoutBtn } from "./utils/checkoutBtn";
 
 mobileMenu();
 
@@ -17,11 +18,14 @@ const shoppingCart: Product[] = [];
 
 //klick-event för köp-knappen på landing page
 document.getElementById("buyBtnBig")?.addEventListener("click", () => {
-    //anrop funktion landing-page - lägg till produkt från produkt-listan(products) till varukorg(shoppingCart)
-    mainAddToCart(products, shoppingCart);
+  //anrop funktion landing-page - lägg till produkt från produkt-listan(products) till varukorg(shoppingCart)
+  mainAddToCart(products, shoppingCart);
 });
 
 import "./utils/showmoreBtn";
 
 mobileMenu();
 showMoreHandleClick();
+
+//Knappen "Gå till kassan" i varukorgen. Vid klick skickas man till "Kassa" sidan.
+checkoutBtn();
