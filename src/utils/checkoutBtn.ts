@@ -1,7 +1,9 @@
-const buyBtn = document.getElementById("buyBtn") as HTMLButtonElement;
+export function checkoutBtn() {
+  const buyBtn = document.getElementById("buyBtn") as HTMLButtonElement;
 
-if (buyBtn) {
+  if (!buyBtn) return;
+
   buyBtn.addEventListener("click", () => {
-    window.location.href = "/src/pages/checkout.html";
+    window.location.href = "/checkout.html";
   });
 }
