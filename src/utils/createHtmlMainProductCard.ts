@@ -1,6 +1,7 @@
 import { products } from "../data/products";
 
-export const mainProductContainer = () => {
+//funktion - skapa html för produkten på landing-page
+export const createHtmlMainProductCard = () => {
     const main = document.getElementById("main");
     const mainProductName = document.getElementById("mainProductName");
     const mainProductInfo = document.getElementById("mainProductInfo");

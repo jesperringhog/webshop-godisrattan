@@ -1,3 +1,4 @@
+//klass för varje produkt-objekt och vilka egenskaper det har
 export class Product {
     image: string;
     name: string;

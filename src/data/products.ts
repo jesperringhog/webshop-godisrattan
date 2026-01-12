@@ -1,5 +1,7 @@
 import { Product } from "../models/Product";
 
+//lista med alla produkt-objekt som vi behöver använda när vi skapar html 
+//ex: products[i].name (kolla models/Product för att se egenskaps-namn)
 export const products: Product[] = [
     new Product (
         "/src/assets/produktbilder/surakarameller.jpg", 
