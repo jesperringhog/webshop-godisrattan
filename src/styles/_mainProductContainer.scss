@@ -4,7 +4,6 @@
 #main {
   background-size: cover;
   background-position: center;
-  font-family: var(--roboto);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,7 +12,7 @@
   @include desktop {
     width: 70%;
     margin: 16px auto;
-    margin-top: 5rem;
+    margin-bottom: 32px;
     border-radius: 16px;
   }
 
@@ -23,15 +22,9 @@
     color: var(--white-font-color);
     -webkit-text-stroke: 0.1px #000000;
     text-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.5);
-    margin: 3rem;
-
-    @include tablet {
-      padding-top: 3rem;
-    }
 
     @include desktop {
       font-size: 3rem;
-      padding-top: 0;
     }
   }
 
@@ -71,7 +64,7 @@
       margin: 0.5rem 0;
 
       &:hover {
-        background-color: var(--primary-font-color);
+        background-color: var(--hover-button);
       }
     }
   }
