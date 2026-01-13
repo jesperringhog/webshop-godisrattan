@@ -5,7 +5,7 @@ import { showMoreHandleClick } from "./utils/showmoreBtn";
 import "./utils/checkoutBtn";
 import { createHtmlMainProductCard } from "./utils/createHtmlMainProductCard";
 import { mainAddToCart } from "./utils/addToCart";
-import type { Product } from "./models/Product";
+
 import { checkoutBtn } from "./utils/checkoutBtn";
 
 mobileMenu();
@@ -14,7 +14,7 @@ mobileMenu();
 createHtmlMainProductCard();
 
 //lista för varukorgen där de klickade produkt-objekten kommer läggas till
-const shoppingCart: Product[] = [];
+// const shoppingCart: Product[] = []; //LÄGG TILLBAKA EFTER TEST
 
 //klick-event för köp-knappen på landing page
 document.getElementById("buyBtnBig")?.addEventListener("click", () => {
