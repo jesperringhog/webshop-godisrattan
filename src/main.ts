@@ -7,6 +7,7 @@ import { createHtmlMainProductCard } from "./utils/createHtmlMainProductCard";
 import { mainAddToCart } from "./utils/addToCart";
 import type { Product } from "./models/Product";
 import { checkoutBtn } from "./utils/checkoutBtn";
+import { createHtmlProductPage } from "../src/utils/createHtmlProductPage";
 
 mobileMenu();
 
@@ -29,3 +30,7 @@ showMoreHandleClick();
 
 //Knappen "Gå till kassan" i varukorgen. Vid klick skickas man till "Kassa" sidan.
 checkoutBtn();
+
+//detta gör HTML för produkter synligt på produktsidan.
+const main = document.querySelector("main") as HTMLElement;
+main.appendChild(createHtmlProductPage(products));
