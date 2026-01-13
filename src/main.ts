@@ -4,8 +4,6 @@ import { mobileMenu } from "./utils/mobileMenu";
 import { showMoreHandleClick } from "./utils/showmoreBtn";
 import "./utils/checkoutBtn";
 import { createHtmlMainProductCard } from "./utils/createHtmlMainProductCard";
-// import { mainAddToCart } from "./utils/addToCart";
-import type { Product } from "./models/Product";
 import { checkoutBtn } from "./utils/checkoutBtn";
 import { createHtmlProductPage } from "../src/utils/createHtmlProductPage";
 import { addToCart } from "./utils/addToCart";
@@ -17,27 +15,25 @@ mobileMenu();
 createHtmlMainProductCard();
 
 //lista för varukorgen där de klickade produkt-objekten kommer läggas till
-const shoppingCart: Product[] = [];
-
+// const shoppingCart: Product[] = []; //LÄGG TILLBAKA EFTER TEST
 
 showMoreHandleClick();
 
 //Knappen "Gå till kassan" i varukorgen. Vid klick skickas man till "Kassa" sidan.
 checkoutBtn();
 
-
 //detta gör HTML för produkter synligt på produktsidan.
 const main = document.querySelector("main") as HTMLElement;
 main.appendChild(createHtmlProductPage(products));
 
-
-document.getElementById("buyBtnBig")?.addEventListener("click", () => { // Adderar en klickhändelse till köpknappen
-    const updatedCart = addToCart(products[0]); // Adderar huvudprodukten till varukorgen
+document.getElementById("buyBtnBig")?.addEventListener("click", () => {
+  // Adderar en klickhändelse till köpknappen
+  const updatedCart = addToCart(products[0]); // Adderar huvudprodukten till varukorgen
   console.log("Varukorg:", updatedCart); // Loggar den uppdaterade varukorgen till konsolen
 });
 
 //klick-event för köp-knappen på landing page
 // document.getElementById("buyBtnBig")?.addEventListener("click", () => {
-  //anrop funktion landing-page - lägg till produkt från produkt-listan(products) till varukorg(shoppingCart)
-  //mainAddToCart(products, shoppingCart);
+//anrop funktion landing-page - lägg till produkt från produkt-listan(products) till varukorg(shoppingCart)
+//mainAddToCart(products, shoppingCart);
 // });
