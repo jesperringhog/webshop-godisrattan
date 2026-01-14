@@ -23,6 +23,10 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     const cartItem = document.createElement("div");
     cartItem.className = "cartItem";
 
+ 
+    //Hela produkten
+    const cartProduct = document.createElement("div");
+    cartProduct.className = "cartProduct";
     //Produktbilden
     const img = document.createElement("img");
     img.className = "cartImg";
@@ -42,6 +46,8 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
 
     cartInfo.appendChild(productName);
     cartInfo.appendChild(productInfo);
+    cartProduct.appendChild(img);
+    cartProduct.appendChild(cartInfo);
     //Antal div
     const cartQty = document.createElement("div");
     cartQty.className = "cartQty";
@@ -117,8 +123,7 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     });
 
     // Bygg ihop hela kortet
-    cartItem.appendChild(img);
-    cartItem.appendChild(cartInfo);
+    cartItem.appendChild(cartProduct);
     cartItem.appendChild(cartQty);
     cartItem.appendChild(cartItemPriceContainer);
     cartItem.appendChild(removeBtn);
