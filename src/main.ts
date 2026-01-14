@@ -27,10 +27,10 @@ showMoreHandleClick();
 checkoutBtn();
 
 //detta gör HTML för produkter synligt på produktsidan.
-const main = document.querySelector("main");
-if (main) {
-  main.appendChild(createHtmlProductPage(products));
-}
+const productPageContainer = document.getElementById("productPageContainer");
+if (productPageContainer !== null) {
+  productPageContainer.appendChild(createHtmlProductPage(products))
+};
 
 // Klick-event för köp-knappen på produktsidan
 document.getElementById("buyBtnBig")?.addEventListener("click", () => {
