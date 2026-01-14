@@ -97,7 +97,7 @@
           </label>
         </div>
       </div>
-      <button class="checkout-btn">Betala</button>
+      <button class="pay-btn" id="payBtn">Betala</button>
     </div>
   </section>
 
@@ -131,6 +131,18 @@
       </div>
     </footer>
   </section>
+
+  <!-- Orderbekräftelse popup -->
+   <div id="popup" class="popup hidden">
+  <div class="popup-content">
+    <h2>Tack för ditt köp! 🍬</h2>
+    <p>
+      Din order har mottagits och behandlas.<br>
+      En orderbekräftelse har skickats till din e-post.
+    </p>
+    <button id="closePopup">Stäng</button>
+  </div>
+</div>
 
   <script type="module" src="/src/main.ts"></script>
 </body>
