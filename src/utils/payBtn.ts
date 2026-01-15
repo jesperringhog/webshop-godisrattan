@@ -19,7 +19,6 @@ export function payBtn() {
     clearCart();
     window.location.href = "/index.html";
   });
-}
 
   // Stäng popup när man klickar utanför rutan
   popup.addEventListener("click", (e) => {
