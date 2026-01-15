@@ -1,5 +1,6 @@
 import type { CartItem } from "../models/CartItem";
-import { saveCart } from "./cartStorage";
+import { getCartTotalPrice, getItemTotalPrice } from "./cartCalculations";
+import { increaseQuantity, decreaseQuantity, removeItem } from "./cartActions";
 
 //funktion - skapa html för varukorgen
 export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
@@ -13,12 +14,9 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
   //Tömmer containern innan vi börjar
   cartItemsContainer.innerHTML = ""; // Rensar innehållet i cartItemsContainer
 
-  let total = 0; // Variabel för att hålla koll på totalsumman
+  const total = getCartTotalPrice(shoppingCart);
 
-  //loopa varukorgen
   shoppingCart.forEach((item, index) => {
-    total += item.product.price * item.quantity;
-
     //Skapar ett cart item
     const cartItem = document.createElement("div");
     cartItem.className = "cartItem";
@@ -70,23 +68,12 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     plusBtn.className = "plusBtn";
     plusBtn.textContent = "+";
 
-    // Event listeners för knapparna
     minusBtn.addEventListener("click", () => {
-      if (item.quantity > 1) {
-        // Om antal är större än 1, minska med 1
-        item.quantity--;
-      } else {
-        shoppingCart.splice(index, 1); // Annars ta bort varan från varukorgen
-      }
-      saveCart(shoppingCart); // Spara ändringarna i lagringen
-      createHtmlCartItems(shoppingCart); // Uppdatera HTML:en för varukorgen
+      decreaseQuantity(shoppingCart, index, createHtmlCartItems);
     });
 
     plusBtn.addEventListener("click", () => {
-      // När plus knappen klickas
-      item.quantity++; // Öka antal med 1
-      saveCart(shoppingCart);
-      createHtmlCartItems(shoppingCart);
+      increaseQuantity(shoppingCart, index, createHtmlCartItems);
     });
 
     qtyControls.appendChild(minusBtn);
@@ -106,8 +93,7 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     // Pris på item
     const cartItemPrice = document.createElement("span");
     cartItemPrice.className = "cartItemPrice";
-    cartItemPrice.textContent =
-      (item.product.price * item.quantity).toFixed(2) + " kr"; //Räknar ut priset beroende på antal
+    cartItemPrice.textContent = getItemTotalPrice(item).toFixed(2) + " kr"; //Räknar ut priset beroende på antal
     // Bygg ihop pris delen
     cartItemPriceContainer.appendChild(priceHead);
     cartItemPriceContainer.appendChild(cartItemPrice);
@@ -115,10 +101,9 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     const removeBtn = document.createElement("button");
     removeBtn.className = "removeBtn";
     removeBtn.textContent = "x";
+
     removeBtn.addEventListener("click", () => {
-      shoppingCart.splice(index, 1);
-      saveCart(shoppingCart);
-      createHtmlCartItems(shoppingCart);
+      removeItem(shoppingCart, index, createHtmlCartItems);
     });
 
     // Bygg ihop hela kortet
