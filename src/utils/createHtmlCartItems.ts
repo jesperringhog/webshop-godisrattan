@@ -23,7 +23,6 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     const cartItem = document.createElement("div");
     cartItem.className = "cartItem";
 
- 
     //Hela produkten
     const cartProduct = document.createElement("div");
     cartProduct.className = "cartProduct";
@@ -145,12 +144,20 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     return;
   }
 
+  const cartTotalWrapper = document.createElement("div");
+  cartTotalWrapper.className = "cartTotalWrapper";
+
   const cartTotalText = document.createElement("span");
+  cartTotalText.className = "cartTotalText";
+
   const cartTotalPrice = document.createElement("span");
+  cartTotalPrice.className = "cartTotalPrice";
 
   cartTotalText.textContent = "Total summa: ";
-  cartTotalPrice.textContent = `${total.toFixed(2)}kr`;
+  cartTotalPrice.textContent = `${total.toFixed(2)} kr`;
 
-  cartTotal.appendChild(cartTotalText);
-  cartTotal.appendChild(cartTotalPrice);
+  cartTotalWrapper.appendChild(cartTotalText);
+  cartTotalWrapper.appendChild(cartTotalPrice);
+
+  cartTotal.appendChild(cartTotalWrapper);
 };
