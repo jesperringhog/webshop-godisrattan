@@ -2,12 +2,15 @@ import type { CartItem } from "../models/CartItem";
 import { getCartTotalPrice, getItemTotalPrice } from "./cartCalculations";
 import { increaseQuantity, decreaseQuantity, removeItem } from "./cartActions";
 
+//JESPER: filen bör ligga i mapp - pages/
+
 //funktion - skapa html för varukorgen
 export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
   // Tar in varukorgen som parameter
   const cartItemsContainer = document.getElementById(
     "cartItems"
   ) as HTMLDivElement;
+  //JESPER: flytta den här variabeln till funktionen initCartSum som anropas längst ner i den här filen
   const cartSum = document.getElementById("cartSum") as HTMLSpanElement; // Total summa i varukorgen
 
   if (!cartItemsContainer) return; // Om containern inte finns, avsluta funktionen
@@ -16,11 +19,18 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
 
   const total = getCartTotalPrice(shoppingCart);
 
+
+  //JESPER: här hade vi kunnat börja dela upp koden i separata filer
+  //så att det inte blir så många kodrader i varje fil
+
+  //JESPER: NY FIL med funktionen renderCartItems som anropas här
+  //loopa varukorgen
   shoppingCart.forEach((item, index) => {
     //Skapar ett cart item
     const cartItem = document.createElement("div");
     cartItem.className = "cartItem";
 
+    //JESPER: NY FIL för funktionen renderCartProducts som anropas inuti renderCartItems - med parameter cartProduct
     //Hela produkten
     const cartProduct = document.createElement("div");
     cartProduct.className = "cartProduct";
@@ -45,6 +55,8 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     cartInfo.appendChild(productInfo);
     cartProduct.appendChild(img);
     cartProduct.appendChild(cartInfo);
+
+    //JESPER: NY FIL med funktion renderCartQuantity som anropas inuti renderCartItems - med parameter cartQty
     //Antal div
     const cartQty = document.createElement("div");
     cartQty.className = "cartQty";
@@ -83,6 +95,8 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     cartQty.appendChild(qtyText);
     cartQty.appendChild(qtyControls);
 
+    //JESPER: NY FIL för funktionen renderCartPrice som anropas inuti renderCartItems - med parameter cartItemPriceContainer
+
     //Priset på varan i item
     const cartItemPriceContainer = document.createElement("div");
     cartItemPriceContainer.className = "cartItemPriceContainer";
@@ -97,6 +111,9 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
     // Bygg ihop pris delen
     cartItemPriceContainer.appendChild(priceHead);
     cartItemPriceContainer.appendChild(cartItemPrice);
+
+    //JESPER: NY FIL för funktionen renderCartRemove som anropas här med parameter removeBtn
+
     //Ta bort item
     const removeBtn = document.createElement("button");
     removeBtn.className = "removeBtn";
@@ -114,6 +131,8 @@ export const createHtmlCartItems = (shoppingCart: CartItem[]) => {
 
     cartItemsContainer.appendChild(cartItem);
   }); // Hit går shoppingCart.forEach
+
+  //JESPER: NY FIL för funktionen initCartSum som anropas här
 
   if (cartSum) {
     // Kollar om cartSum finns
