@@ -146,5 +146,10 @@
     font-size: 16px;
     background-color: var(--primary-button);
     color: var(--white-font-color);
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
