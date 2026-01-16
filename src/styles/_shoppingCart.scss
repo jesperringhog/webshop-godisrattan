@@ -103,7 +103,6 @@
 
 #cartItems {
   width: 100%;
-  align-items: stretch;
 }
 
 .productName {
@@ -129,10 +128,6 @@
   border-radius: 30px;
   border: none;
   cursor: pointer;
-}
-
-.price {
-  font-weight: bold;
 }
 
 .removeBtn {
@@ -177,7 +172,7 @@
   }
 }
 
-.emptyCart {  
+.emptyCart {
   background-color: var(--white-font-color);
   border-radius: 12px;
   padding: 60px;
