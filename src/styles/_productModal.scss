@@ -1,0 +1,41 @@
+@use "variables" as *;
+
+#productModal {
+  background-color: var(--primary-base);
+  border: none;
+  width: 100vw;
+  height: 70vh;
+
+  .btnContainer {
+    display: flex;
+    justify-content: end;
+    button {
+      background-color: var(--primary-base);
+      font-size: 2rem;
+      border: none;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+  }
+
+  #extDetailsContainer {
+    display: flex;
+    height: 50vh;
+
+    .imgContainer {
+        background-position: center;
+        background-size: cover;
+        width: 50%;
+        border-radius: 16px 0 0 16px;
+    }
+
+    .detailsContainer {
+        background-color: var(--white-font-color);
+        width: 50%;
+        border-radius: 0 16px 16px 0;
+        padding: 2rem;
+    }
+  }
+
+
+}
