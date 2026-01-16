@@ -1,5 +1,5 @@
 import { products } from "../data/products";
-import { addToCart } from "./addToCart";
+import { addToCart } from "../services/addToCart";
 import { updateCartBadge } from "./cartIconQuantity";
 
 // Startar funktionaliteten för köpknappar på produktsidan

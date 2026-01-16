@@ -1,4 +1,4 @@
-import { clearCart } from "./cartStorage";
+import { clearCart } from "../services/cartStorage";
 
 //JESPER: bör ligga i mapp - components/
 

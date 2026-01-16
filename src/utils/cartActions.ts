@@ -1,7 +1,8 @@
 import type { CartItem } from "../models/CartItem";
-import { saveCart } from "./cartStorage";
+import { saveCart } from "../services/cartStorage";
 import { updateCartBadge } from "./cartIconQuantity";
 
+// funktion för att addera antal produkter
 export const increaseQuantity = (
   cart: CartItem[],
   index: number,
@@ -12,6 +13,7 @@ export const increaseQuantity = (
   render(cart);
 };
 
+// funktion för att minska antal produkter
 export const decreaseQuantity = (
   cart: CartItem[],
   index: number,
@@ -26,6 +28,7 @@ export const decreaseQuantity = (
   render(cart);
 };
 
+// funktion för att ta bort produkt
 export const removeItem = (
   cart: CartItem[],
   index: number,

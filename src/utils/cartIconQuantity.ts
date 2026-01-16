@@ -1,5 +1,6 @@
 import type { CartItem } from "../models/CartItem";
 
+// hämtar totalantal från varukorgen och anger total till varukorgs-ikonen och uppdaterar
 export const updateCartBadge = (shoppingCart: CartItem[]) => {
     const totalQuantity = shoppingCart.reduce(
         (sum, item) => sum + item.quantity,

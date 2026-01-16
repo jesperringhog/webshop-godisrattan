@@ -1,46 +1,26 @@
 import { products } from "./data/products";
 import "./styles/style.scss";
-import { mobileMenu } from "./utils/mobileMenu";
-import { showMoreHandleClick } from "./utils/showmoreBtn";
+import { mobileMenu } from "./components/mobileMenu";
+import { showMoreHandleClick } from "./components/showmoreBtn";
 import "./utils/goToCheckoutBtn";
-import { createHtmlMainProductCard } from "./utils/createHtmlMainProductCard";
+import { createHtmlMainProductCard } from "./pages/createHtmlMainProductCard";
 import { goToCheckoutBtn } from "./utils/goToCheckoutBtn";
-import { createHtmlProductPage } from "../src/utils/createHtmlProductPage";
-import { addToCart } from "./utils/addToCart";
-import "./utils/showmoreBtn";
+import { createHtmlProductPage } from "./pages/createHtmlProductPage";
+import { addToCart } from "./services/addToCart";
+import "./components/showmoreBtn";
 import { initProductPageCart } from "./utils/productPageCart";
-import { loadCart } from "./utils/cartStorage";
-import { createHtmlCartItems } from "./utils/createHtmlCartItems";
-import { payBtn } from "./utils/payBtn";
+import { loadCart } from "./services/cartStorage";
+import { createHtmlCartItems } from "./pages/createHtmlCartItems";
+import { payBtn } from "./components/payBtn";
 import { updateCartBadge } from "./utils/cartIconQuantity";
 
-
-
 mobileMenu();
-
-const cart = loadCart();
-updateCartBadge(cart);
 
 //anrop funktion - skapa html för mainProductCard på landing-page för att kunna lägga objektet i varukorgen
 createHtmlMainProductCard();
 
-//lista för varukorgen där de klickade produkt-objekten kommer läggas till
-// const shoppingCart: Product[] = []; //LÄGG TILLBAKA EFTER TEST
-
-showMoreHandleClick();
-
-//Knappen "Gå till kassan" i varukorgen. Vid klick skickas man till "Kassa" sidan.
-goToCheckoutBtn();
-
-// Popup vid klick på betalaknappen i kassan
-payBtn();
-//JESPER: flytta längst ner
-
-//detta gör HTML för produkter synligt på produktsidan.
-const productPageContainer = document.getElementById("productPageContainer");
-if (productPageContainer !== null) {
-  productPageContainer.appendChild(createHtmlProductPage(products))
-};
+const cart = loadCart();
+updateCartBadge(cart);
 
 // Klick-event för köp-knappen på landingsite
 document.getElementById("buyBtnBig")?.addEventListener("click", () => {
@@ -49,11 +29,16 @@ document.getElementById("buyBtnBig")?.addEventListener("click", () => {
   console.log("Varukorg:", updatedCart); // Loggar den uppdaterade varukorgen till konsolen
   updateCartBadge(updatedCart);
 });
-//JESPER: flytta upp under createHtmlMainProduct
 
+//detta gör HTML för produkter synligt på produktsidan.
+const productPageContainer = document.getElementById("productPageContainer");
+if (productPageContainer !== null) {
+  productPageContainer.appendChild(createHtmlProductPage(products))
+};
 
 initProductPageCart(); // Initierar köpknappar på produktsidan
-//JESPER: flytta upp under createHtmlProductPage 
+
+showMoreHandleClick();
 
 // Ladda varukorgen om vi är på shoppingCart-sidan
 const cartItemsContainer = document.getElementById("cartItems");
@@ -61,3 +46,9 @@ if (cartItemsContainer) {
   const cart = loadCart();
   createHtmlCartItems(cart);
 }
+
+//Knappen "Gå till kassan" i varukorgen. Vid klick skickas man till "Kassa" sidan.
+goToCheckoutBtn();
+
+// Popup vid klick på betalaknappen i kassan
+payBtn();

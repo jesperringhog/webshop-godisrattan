@@ -1,7 +1,7 @@
 import type { Product } from "../models/Product";
 import type { CartItem } from "../models/CartItem";
 import { saveCart, loadCart } from "./cartStorage";
-import { createHtmlCartItems } from "./createHtmlCartItems";
+import { createHtmlCartItems } from "../pages/createHtmlCartItems";
 
 //JESPER: filen bör ligga i mapp - services/
 
