@@ -47,8 +47,8 @@ export const createHtmlMainProductCard = () => {
     button.id = "buyBtnBig";
     button.innerHTML = "Köp";
 
-    showProductDetails(products[i]);
     productName.addEventListener("click", () => {
+      showProductDetails(products[i]);
     });
  
     productDetailsContainer.appendChild(productName);
