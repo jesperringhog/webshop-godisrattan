@@ -95,6 +95,10 @@
   border-radius: 25px;
   font-size: 18px;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-button);
+  }
 }
 
 
@@ -159,7 +163,10 @@
 
     &:hover {
       opacity: 0.9;
+      background-color: var(--secondary-hover-button);
+      color: var(--white-font-color);
     }
+
   }
 }
 

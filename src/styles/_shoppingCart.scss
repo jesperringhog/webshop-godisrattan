@@ -150,6 +150,10 @@
   border-radius: 30px;
   border: none;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-button);
+  }
 }
 
 #cartTotal {
@@ -196,6 +200,7 @@
 
     &:hover {
       opacity: 0.9;
+      background-color: var(--secondary-hover-button);
     }
   }
 }
