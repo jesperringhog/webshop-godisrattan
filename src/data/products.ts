@@ -13,7 +13,7 @@ export const products: Product[] = [
         "/src/assets/produktbilder/polkaklubba.jpg",
         "Swirly Polka",
         "Nostalgiskt god klubba",
-        29
+        8.90
     ),
     new Product(
         "/src/assets/produktbilder/fruity.jpg",
@@ -49,6 +49,32 @@ export const products: Product[] = [
         "/src/assets/produktbilder/bonor.jpg",
         "Dreambeans",
         "Runda, söta & fina",
+        8.9
+    ),
+    new Product(
+        "/src/assets/produktbilder/banana-toffee.jpg",
+        "Bubbs",
+        "Banan & toffee",
+        8.9
+    ),
+    new Product(
+        "/src/assets/produktbilder/saltavral.jpg",
+        "Saltvrål",
+        "Supersalt!",
+        8.9
+    )
+    ,
+    new Product(
+        "/src/assets/produktbilder/hallonlakrits2.jpg",
+        "Salta Hallon",
+        "Lagom salt & sött",
+        8.9
+    )
+    ,
+    new Product(
+        "/src/assets/produktbilder/saltaskallar2.jpg",
+        "SaltSkulls",
+        "Saltiga favoriter",
         8.9
     )
 ];
