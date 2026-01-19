@@ -1,5 +1,3 @@
-//JESPER: bör ligga i mapp - components
-
 document
     .getElementById("showMoreBtn")
     ?.addEventListener("click", showMoreHandleClick);

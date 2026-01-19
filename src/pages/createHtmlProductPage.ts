@@ -36,10 +36,16 @@ export const createHtmlProductPage = (
     productPageContainer.id = "productPageContainer";
 
     productPageContainer.innerHTML = `
+    <div id="productCardGrid0">
     <div id="productCardGrid"></div>
     <div id="productCardGrid2"></div>
+    </div>
 
     `;
+
+    const productGrid0 = productPageContainer.querySelector(
+        "#productCardGrid0"
+    ) as HTMLDivElement;
 
     const productGrid = productPageContainer.querySelector(
         "#productCardGrid"
@@ -60,7 +66,7 @@ export const createHtmlProductPage = (
         productGrid.appendChild(showMoreBtnContainer)
     };
     // sista 4 produktkorten
-    products.slice(4, 8).forEach(product => {
+    products.slice(4, 15).forEach(product => {
         productGrid2.appendChild(createProductCard(product));
     });
 
