@@ -99,25 +99,9 @@
   transform: translateY(9px);
 }
 
-// #menuToggle.open .bar:nth-child(2) {
-//   transform: scaleX(1.2); /* valfritt, gör mitten lite tydligare */
-// }
-
 #menuToggle.open .bar:nth-child(3) {
   transform: translateY(-9px);
 }
-
-// #menuToggle.open .bar:nth-child(1) {
-//   transform: rotate(45deg) translate(5px, 5px);
-// }
-
-// #menuToggle.open .bar:nth-child(2) {
-//   opacity: 0;
-// }
-
-// #menuToggle.open .bar:nth-child(3) {
-//   transform: rotate(-45deg) translate(5px, -5px);
-// }
 
 @include tablet {
   #menuToggle {
