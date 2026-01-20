@@ -52,8 +52,13 @@ if (cartItemsContainer) {
   createHtmlCartItems(cart);
 }
 
-//Knappen "Gå till kassan" i varukorgen. Vid klick skickas man till "Kassa" sidan.
+//Knappen "Gå till kassan" i varukorgen. Vid klick skickas man till "Kassasidan".
 goToCheckoutBtn();
+
+// Tillbaka-knapp till varukorgen
+document.getElementById("backToCartBtn")?.addEventListener("click", () => {
+  window.location.href = "/shoppingCart.html";
+});
 
 // Visar summering på checkout-sidan
 renderCheckoutPriceSummary();

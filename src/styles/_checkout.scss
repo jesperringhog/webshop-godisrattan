@@ -7,6 +7,27 @@
   padding: 20px;
 }
 
+.back-btn {
+  width: 100%;
+  max-width: 500px; 
+  margin: 0 auto;
+  margin-bottom: 12px;
+  display: block; 
+  padding: 16px;
+  background-color: var(--primary-button);
+  color: var(--white-font-color);
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--grey-base);
+    color: var(--white-font-color);
+    opacity: 0.9;
+  }
+}
+
 .checkout-container {
   max-width: 1200px;
   margin: 0 auto;
