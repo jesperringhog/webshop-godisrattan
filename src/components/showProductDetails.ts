@@ -14,6 +14,8 @@ export const showProductDetails = (product: Product) => {
     productDetails.close();
   });
 
+  //skapa html för produktdetaljer
   renderProductDetails(product);
+  //anropar funktionen för att kunna lägga produkten i varukorgen
   initProductDetailsCart(product);
 };

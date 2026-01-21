@@ -21,12 +21,13 @@ import { initSearchProduct } from "./components/initSearchProduct";
 // Initierar mobilmenyn
 mobileMenu();
 
+// händelse när man gör en submit (enter) i sökformuläret
 document.getElementById("searchForm")?.addEventListener("submit", (e) => {
   e.preventDefault();
-  initSearchProduct();
+  initSearchProduct(); //anropar funktionen för att söka efter en produkt
 });
 
-//anrop funktion - skapa html för mainProductCard på landing-page för att kunna lägga objektet i varukorgen
+//anropa funktionen för att skapa html för mainProductCard
 createHtmlMainProductCard();
 
 // Uppdaterar varukorgsikonen med antal objekt vid sidladdning
