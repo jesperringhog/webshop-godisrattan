@@ -1,21 +1,17 @@
 import { getCartTotalPrice } from "../utils/cartCalculations";
 import { loadCart } from "../services/cartStorage";
 
-
-// Renderar sammanfattningen av varukorgen i kassan
 export const renderCheckoutPriceSummary = () => {
-  const checkoutItemsContainer = document.getElementById("checkoutItems"); // Container från checkout.html
-  const checkoutTotal = document.getElementById("checkoutTotal"); // Element för totalpris från checkout.html
-  const checkoutShipping = document.getElementById("checkoutShipping"); // Element för fraktkostnad från checkout.html
+  const checkoutItemsContainer = document.getElementById("checkoutItems");
+  const checkoutTotal = document.getElementById("checkoutTotal");
+  const checkoutShipping = document.getElementById("checkoutShipping");
 
-  if (!checkoutItemsContainer || !checkoutTotal) return; // Säkerställer att elementen finns
+  if (!checkoutItemsContainer || !checkoutTotal) return;
 
-  const cart = loadCart(); // Hämtar varukorgen från localStorage
+  const cart = loadCart();
 
-  // Tömmer containern innan rendering
   checkoutItemsContainer.innerHTML = "";
 
-  // Skapar html för varje produkt som finns i varukorgen
   cart.forEach((item) => {
     const summaryItem = document.createElement("div");
     summaryItem.className = "summary-item";
@@ -31,16 +27,14 @@ export const renderCheckoutPriceSummary = () => {
     checkoutItemsContainer.appendChild(summaryItem);
   });
 
-  // Beräkna frakt och total
   const cartTotal = getCartTotalPrice(cart);
   const shipping_fee = cartTotal >= 200 ? 0 : 39;
   const total = cartTotal + shipping_fee;
 
-  // Uppdatera frakt
   if (checkoutShipping) {
-    checkoutShipping.textContent = shipping_fee === 0 ? "0 kr" : `${shipping_fee} kr`;
+    checkoutShipping.textContent =
+      shipping_fee === 0 ? "0 kr" : `${shipping_fee} kr`;
   }
 
-  // Uppdatera totalsumma
   checkoutTotal.textContent = `${total.toFixed(2)} kr`;
 };

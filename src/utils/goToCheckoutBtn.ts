@@ -1,9 +1,11 @@
-export function goToCheckoutBtn() { // Hanterar klick på gå till kassan-knappen
-  const goToCheckoutBtn = document.getElementById("goToCheckoutBtn") as HTMLButtonElement; // Hämta gå till kassan-knappen från DOM
+export function goToCheckoutBtn() {
+  const goToCheckoutBtn = document.getElementById(
+    "goToCheckoutBtn",
+  ) as HTMLButtonElement;
 
-  if (!goToCheckoutBtn) return; // Om knappen inte finns, avsluta funktionen
+  if (!goToCheckoutBtn) return;
 
-  goToCheckoutBtn.addEventListener("click", () => { // Lägg till klick-händelse på knappen
-    window.location.href = "/checkout.html"; // Användaren kommer till kassan
+  goToCheckoutBtn.addEventListener("click", () => {
+    window.location.href = "/checkout.html";
   });
 }

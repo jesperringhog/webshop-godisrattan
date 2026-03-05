@@ -1,10 +1,9 @@
 import { showProductDetails } from "../components/showProductDetails";
 import { products } from "../data/products";
 
-// Funktion som skapar HTML för huvudproduktkortet
 export const createHtmlMainProductCard = () => {
-    const main = document.getElementById("main");
-  
+  const main = document.getElementById("main");
+
   for (let i = 0; i === 0; i++) {
     const productContainer = document.createElement("div");
     const productDetailsContainer = document.createElement("div");
@@ -12,7 +11,7 @@ export const createHtmlMainProductCard = () => {
     const productInfo = document.createElement("p");
     const productPrice = document.createElement("p");
     const button = document.createElement("button");
- 
+
     if (!main) return;
     main.style.backgroundImage = `url(${products[i].image}`;
     productContainer.id = "productContainer";
@@ -24,18 +23,16 @@ export const createHtmlMainProductCard = () => {
     button.id = "buyBtnBig";
     button.innerHTML = "Köp";
 
-    // Funktion för att visa produktdetaljer vid klick på produktnamnet
     productName.addEventListener("click", () => {
       showProductDetails(products[i]);
     });
- 
+
     productDetailsContainer.appendChild(productName);
     productDetailsContainer.appendChild(productInfo);
     productDetailsContainer.appendChild(productPrice);
     productContainer.appendChild(productDetailsContainer);
     productContainer.appendChild(button);
-    
+
     main?.appendChild(productContainer);
   }
-}
-
+};

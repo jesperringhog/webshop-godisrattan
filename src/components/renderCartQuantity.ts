@@ -1,26 +1,30 @@
 import type { CartItem } from "../models/CartItem";
 import { decreaseQuantity, increaseQuantity } from "../utils/cartActions";
 
-export const renderCartQuantity = (shoppingCart: CartItem[], item: CartItem, index: number, createHtmlCartItems: (shoppingCart: CartItem[]) => void) => {
-  //Antal div
+export const renderCartQuantity = (
+  shoppingCart: CartItem[],
+  item: CartItem,
+  index: number,
+  createHtmlCartItems: (shoppingCart: CartItem[]) => void,
+) => {
   const cartQty = document.createElement("div");
   cartQty.className = "cartQty";
-  //Antal produkter
+
   const qtyText = document.createElement("span");
   qtyText.className = "qty";
   qtyText.innerText = "Antal ";
-  //Antal produkter kontroll +/-
+
   const qtyControls = document.createElement("div");
   qtyControls.className = "qtyControls";
-  // Minus knapp
+
   const minusBtn = document.createElement("button");
   minusBtn.className = "minusBtn";
   minusBtn.textContent = "-";
-  // Antal produkter
+
   const numOfProducts = document.createElement("span");
   numOfProducts.className = "numOfProducts";
-  numOfProducts.textContent = item.quantity.toString(); //Kanske ställer till det vid räkning
-  // Plus knapp
+  numOfProducts.textContent = item.quantity.toString();
+
   const plusBtn = document.createElement("button");
   plusBtn.className = "plusBtn";
   plusBtn.textContent = "+";

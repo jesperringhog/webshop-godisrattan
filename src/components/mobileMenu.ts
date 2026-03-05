@@ -1,4 +1,3 @@
-// Funktion som hanterar mobilmenyns öppning och stängning
 export function mobileMenu() {
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");

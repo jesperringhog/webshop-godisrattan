@@ -1,13 +1,11 @@
 import { Product } from "../models/Product";
 
-//funktion skapar html för produktkorten
 export const createProductCard = (product: Product): HTMLDivElement => {
-    const card: HTMLDivElement = document.createElement("div");
-    card.className = "productCard";
-    card.setAttribute("data-category", product.category);
+  const card: HTMLDivElement = document.createElement("div");
+  card.className = "productCard";
+  card.setAttribute("data-category", product.category);
 
-    // Fyller produktkortet med information från produkten
-    card.innerHTML = `
+  card.innerHTML = `
         <div class="productCardImageContainer">
             <img 
                 class="productCardImg" 
@@ -24,18 +22,14 @@ export const createProductCard = (product: Product): HTMLDivElement => {
         </div>
     `;
 
-    return card;
+  return card;
 };
 
-//funktion som placerar dem rätt på produktsidan
-export const createHtmlProductPage = (
-    products: Product[]
-): HTMLDivElement => {
+export const createHtmlProductPage = (products: Product[]): HTMLDivElement => {
+  const productPageContainer: HTMLDivElement = document.createElement("div");
+  productPageContainer.id = "productPageContainer";
 
-    const productPageContainer: HTMLDivElement = document.createElement("div");
-    productPageContainer.id = "productPageContainer";
-
-    productPageContainer.innerHTML = `
+  productPageContainer.innerHTML = `
     <div id="productCardGrid0">
     <div id="productCardGrid"></div>
     <div id="productCardGrid2"></div>
@@ -43,34 +37,26 @@ export const createHtmlProductPage = (
 
     `;
 
-    //JESPER: den här variabeln används inte, ta bort?
-    // const productGrid0 = productPageContainer.querySelector(
-    //     "#productCardGrid0"
-    // ) as HTMLDivElement;
+  const productGrid = productPageContainer.querySelector(
+    "#productCardGrid",
+  ) as HTMLDivElement;
 
-    const productGrid = productPageContainer.querySelector(
-        "#productCardGrid"
-    ) as HTMLDivElement;
+  const productGrid2 = productPageContainer.querySelector(
+    "#productCardGrid2",
+  ) as HTMLDivElement;
 
-    const productGrid2 = productPageContainer.querySelector(
-        "#productCardGrid2"
-    ) as HTMLDivElement;
+  products.slice(0, 4).forEach((product) => {
+    productGrid.appendChild(createProductCard(product));
+  });
 
-    // första 4 produktkorten
-    products.slice(0, 4).forEach(product => {
-        productGrid.appendChild(createProductCard(product));
+  const showMoreBtnContainer = document.getElementById("showMoreBtnContainer");
+  if (showMoreBtnContainer !== null) {
+    productGrid.appendChild(showMoreBtnContainer);
+  }
 
-    });
+  products.slice(4, 15).forEach((product) => {
+    productGrid2.appendChild(createProductCard(product));
+  });
 
-    const showMoreBtnContainer = document.getElementById("showMoreBtnContainer");
-    if (showMoreBtnContainer !== null) {
-        productGrid.appendChild(showMoreBtnContainer)
-    };
-    // sista produkterna i grid2
-    products.slice(4, 15).forEach(product => {
-        productGrid2.appendChild(createProductCard(product));
-    });
-
-    return productPageContainer;
-
+  return productPageContainer;
 };

@@ -1,16 +1,16 @@
 import type { CartItem } from "../models/CartItem";
 
-const CART_KEY = "shoppingCart"; // Key används för att lagra kundvagnsdata i localStorage
+const CART_KEY = "shoppingCart";
 
-export const saveCart = (cart: CartItem[]): void => { // Sparar kundvagnsdata i localStorage
-  localStorage.setItem(CART_KEY, JSON.stringify(cart)); // Konverterar kundvagnsdatan till en sträng och sparar den
+export const saveCart = (cart: CartItem[]): void => {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
 };
 
-export const loadCart = (): CartItem[] => { // Hämtar kundvagnsdata från localStorage
-  const saved = localStorage.getItem(CART_KEY); // Hämtar den sparade strängen från localStorage
-  return saved ? JSON.parse(saved) : []; // Om det finns sparad data, konvertera den tillbaka till ett objekt, annars returnera en tom array
+export const loadCart = (): CartItem[] => {
+  const saved = localStorage.getItem(CART_KEY);
+  return saved ? JSON.parse(saved) : [];
 };
 
-export const clearCart = (): void => { // Rensar kundvagnsdata från localStorage
-  localStorage.removeItem(CART_KEY); // Tar bort kundvagnsdata från localStorage
+export const clearCart = (): void => {
+  localStorage.removeItem(CART_KEY);
 };
